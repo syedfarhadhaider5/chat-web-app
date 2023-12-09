@@ -2,6 +2,7 @@ import {Box, Grid, IconButton, Switch, Typography} from "@mui/material";
 import {useEffect, useState} from "react";
 import DarkMuiTheme from "@/DarkMuiTheme";
 import { useTheme } from '@mui/material/styles';
+import LeftSidebar from "@/pages/components/LeftSidebar";
 
 
 const HomePage = () => {
@@ -53,25 +54,26 @@ const HomePage = () => {
                     color="primary"
                 />
             </IconButton>
-            <Box style={chatMessagesName}>
-                <Typography  variant={'subtitle2'}>Farhad</Typography>
-            </Box>
-            <Box style={chatMessagesTime}>
-                <Typography  variant={'subtitle2'}>3.30</Typography>
-            </Box>
-            <Box style={chatMessagesSend}>
-                <Typography color={'text.primary'}  variant={'subtitle2'}>Send</Typography>
-            </Box>
-            <Box style={chatMessagesName}>
-                <Typography  variant={'subtitle2'}>Farhad</Typography>
-            </Box>
-            <Box style={chatMessagesTime}>
-                <Typography  variant={'subtitle2'}>3.30</Typography>
-            </Box>
-            <Box style={chatMessagesReply}>
-                <Typography color={'text.secondary'} variant={'subtitle2'}>Reply</Typography>
-            </Box>
-        </>
+            {/*<Box style={chatMessagesName}>*/}
+            {/*    <Typography  variant={'subtitle2'}>Farhad</Typography>*/}
+            {/*</Box>*/}
+            {/*<Box style={chatMessagesTime}>*/}
+            {/*    <Typography  variant={'subtitle2'}>3.30</Typography>*/}
+            {/*</Box>*/}
+            {/*<Box style={chatMessagesSend}>*/}
+            {/*    <Typography color={'text.primary'}  variant={'subtitle2'}>Send</Typography>*/}
+            {/*</Box>*/}
+            {/*<Box style={chatMessagesName}>*/}
+            {/*    <Typography  variant={'subtitle2'}>Farhad</Typography>*/}
+            {/*</Box>*/}
+            {/*<Box style={chatMessagesTime}>*/}
+            {/*    <Typography  variant={'subtitle2'}>3.30</Typography>*/}
+            {/*</Box>*/}
+            {/*<Box style={chatMessagesReply}>*/}
+            {/*    <Typography color={'text.secondary'} variant={'subtitle2'}>Reply</Typography>*/}
+            {/*</Box>*/}
+            <LeftSidebar />
+            </>
     )
 }
 

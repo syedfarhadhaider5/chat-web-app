@@ -5,6 +5,7 @@ import Head from "next/head";
 import lightMuiTheme from "@/LightMuiTheme";
 import darkMuiTheme from "@/DarkMuiTheme";
 import {useEffect, useState} from "react";
+import "../styles/LeftSidebar.css";
 
 export default function App({ Component, pageProps }: AppProps) {
     const theme = useTheme();
@@ -18,9 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <Head>
                 <title>Rentro</title>
             </Head>
-            <Container>
                 <Component {...pageProps} />
-            </Container>
         </ThemeProvider>
     )
 }
