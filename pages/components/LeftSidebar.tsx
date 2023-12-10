@@ -129,9 +129,9 @@ const LeftSidebar = () =>{
                 <Box style={chatUser} display={'flex'} justifyContent={'space-between'} alignItems={'flex-start'} className={'pt-4 pb-4'}>
                     <Box display={"flex"}>
                         <Box display={"flex"} alignItems={"flex-start"}>
-                            <img src={'img/user1.jpeg'} className={'rounded-full w-12 h-12'}  />
+                            <img src={'img/user_7.jpeg'} className={'rounded-full w-12 h-12'}  />
                             <Box style={{paddingLeft: '16px',}}>
-                                <Typography varint={"subtitle1"} style={userName}>Liam Anderson</Typography>
+                                <Typography varint={"subtitle1"} style={userName}>Shakra Shamim</Typography>
                                 <Typography varint={"subtitle2"} style={userTyping}>Typing...</Typography>
                             </Box>
                         </Box>
@@ -167,7 +167,7 @@ const LeftSidebar = () =>{
                         </Box>
                     </Box>
                     <Box display={"flex"} flexDirection={"column"} alignItems={"flex-end"}>
-                        <Typography varint={"subtitle2"} style={userTiming}>12:50 PM</Typography>
+                        <Typography varint={"subtitle2"} style={userTiming}>11:50 AM</Typography>
                         <Typography style={userMessageCount} varint={"subtitle2"}>
                             3
                         </Typography>
@@ -189,7 +189,7 @@ const LeftSidebar = () =>{
                         </Box>
                     </Box>
                     <Box display={"flex"} flexDirection={"column"} alignItems={"flex-end"}>
-                        <Typography varint={"subtitle2"} style={userTiming}>12:50 PM</Typography>
+                        <Typography varint={"subtitle2"} style={userTiming}>07:50 PM</Typography>
                         <Typography style={userMessageCount} varint={"subtitle2"}>
                             1
                         </Typography>
