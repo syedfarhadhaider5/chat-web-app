@@ -3,6 +3,8 @@ import {useEffect, useState} from "react";
 import DarkMuiTheme from "@/DarkMuiTheme";
 import { useTheme } from '@mui/material/styles';
 import LeftSidebar from "@/pages/components/LeftSidebar";
+import rightSidebar from "@/pages/components/RightSidebar";
+import RightSidebar from "@/pages/components/RightSidebar";
 
 
 const HomePage = () => {
@@ -31,29 +33,9 @@ const HomePage = () => {
     const chatMessagesTime = {
         color: theme.palette.mode === 'light' ? '#A0A0A0' : '#A0A0A0',
     }
-    const handleToggleChange = () => {
-        const newToggleState = !toggleState;
-        setToggleState(newToggleState);
-        // Save to local storage
-        localStorage.setItem('toggleTheme', JSON.stringify(newToggleState));
-        location.reload();
-    };
-    useEffect(() => {
-        const storedToggleState = localStorage.getItem('toggleTheme');
-        if (storedToggleState) {
-            setToggleState(JSON.parse(storedToggleState));
-        }
-    }, []);
     return(
         <>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                <Switch
-                    checked={toggleState}
-                    onChange={handleToggleChange}
-                    inputProps={{ 'aria-label': 'toggle' }}
-                    color="primary"
-                />
-            </IconButton>
+
             {/*<Box style={chatMessagesName}>*/}
             {/*    <Typography  variant={'subtitle2'}>Farhad</Typography>*/}
             {/*</Box>*/}
@@ -72,7 +54,12 @@ const HomePage = () => {
             {/*<Box style={chatMessagesReply}>*/}
             {/*    <Typography color={'text.secondary'} variant={'subtitle2'}>Reply</Typography>*/}
             {/*</Box>*/}
-            <LeftSidebar />
+            <Box display={'flex'}>
+                <LeftSidebar />
+                <Box>
+                    <RightSidebar />
+                </Box>
+            </Box>
             </>
     )
 }

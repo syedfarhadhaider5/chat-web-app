@@ -14,8 +14,8 @@ const LeftSidebar = () =>{
     };
     const chatLeftSideBar = {
         backgroundColor: theme.palette.mode === 'light' ? '#FFFFFF' : '#121212',
-        width: "390px",
         height: '100vh',
+        width: "30vw",
         border: `.1px solid ${theme.palette.type === 'light' ? '#5E5E5E' : '#303030'}`, // Set the border color
         overflowY: 'auto',
     };
@@ -198,7 +198,12 @@ const LeftSidebar = () =>{
                 <Box style={chatUser} onClick={handleClick}
                      sx={{
                          backgroundColor: isClicked ? theme.palette.mode === 'light' ? '#D9F1FF' : '#0C3F5B' : '', //'#D9F1FF' : '', // Change color when clicked
-                     }} display={'flex'} justifyContent={'space-between'} alignItems={'flex-start'} className={'pt-4 pb-4'}>
+                     }}
+                     display={'flex'}
+                     justifyContent={'space-between'}
+                     alignItems={'flex-start'}
+                     className={'pt-4 pb-4'}
+                >
                     <Box display={"flex"}>
                         <Box display={"flex"} alignItems={"flex-start"}>
                             <img src={'img/user_5.jpeg'} className={'rounded-full w-12 h-12'}  />
