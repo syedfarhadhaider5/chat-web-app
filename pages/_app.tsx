@@ -11,7 +11,10 @@ export default function App({ Component, pageProps }: AppProps) {
     const theme = useTheme();
     const [toggleValue, setToggleValue] = useState(false);
     useEffect(() => {
-        setToggleValue(JSON.parse(localStorage.getItem('toggleTheme')))
+        const storedValue = localStorage.getItem('toggleTheme');
+        if (storedValue !== null) {
+            setToggleValue(JSON.parse(storedValue));
+        }
     }, []);
     return (
         <ThemeProvider theme={toggleValue ? darkMuiTheme : lightMuiTheme}>

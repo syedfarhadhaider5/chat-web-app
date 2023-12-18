@@ -24,8 +24,8 @@ const RightSideBarTop  = () =>{
     const TopHeader = {
         backgroundColor: theme.palette.mode === 'light' ? '#FFFFFF' : '#121212',
         height: "90px",
-        borderTop: `.1px solid ${theme.palette.type === 'light' ? '#DFDFDF' : '#303030'}`, // Set the border color
-        borderBottom: `.1px solid ${theme.palette.type === 'light' ? '#DFDFDF' : '#303030'}`, // Set the border color
+        borderTop: ".1px solid" + theme.palette.mode === 'light' ? '#DFDFDF' : '#303030', // Set the border color
+        borderBottom: ".1px solid" + theme.palette.mode === 'light' ? '#DFDFDF' : '#303030', // Set the border color
         paddingLeft: "30px",
         paddingRight: "30px",
         width: "70vw",
@@ -51,8 +51,8 @@ const RightSideBarTop  = () =>{
                 <Box sx={{display: 'flex'}}>
                     <img src={'img/user1.jpeg'} className={'rounded-full w-12 h-12'}  />
                     <Box style={{paddingLeft: '16px',}}>
-                        <Typography varint={"subtitle1"} style={userOpenChatName}>Liam Anderson</Typography>
-                        <Typography varint={"subtitle2"} style={userOpenChatStatus}>Online</Typography>
+                        <Typography variant={"subtitle1"} style={userOpenChatName}>Liam Anderson</Typography>
+                        <Typography variant={"subtitle2"} style={userOpenChatStatus}>Online</Typography>
                     </Box>
                 </Box>
                 <Box style={SidebarIcon}>
@@ -64,7 +64,6 @@ const RightSideBarTop  = () =>{
                         onChange={handleToggleChange}
                         inputProps={{ 'aria-label': 'toggle' }}
                         color="primary"
-                        fontSize="medium"
                     />
                 </Box>
             </Box>

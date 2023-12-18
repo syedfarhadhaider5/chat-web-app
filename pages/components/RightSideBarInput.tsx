@@ -11,8 +11,8 @@ const RightSideBarInput  = () =>{
         paddingLeft: "30px",
         paddingRight: "30px",
         backgroundColor: theme.palette.mode === 'light' ? '#FFFFFF' : '#121212',
-        borderTop: `.1px solid ${theme.palette.type === 'light' ? '#DFDFDF' : '#303030'}`, // Set the border color
-        borderBottom: `.1px solid ${theme.palette.type === 'light' ? '#DFDFDF' : '#303030'}`, // Set the
+        borderTop: ".1px solid" + theme.palette.mode === 'light' ? '#DFDFDF' : '#303030', // Set the border color
+        borderBottom: ".1px solid" + theme.palette.mode === 'light' ? '#DFDFDF' : '#303030', // Set the
         height: "85px",
         display: 'flex',
         justifyContent: "space-between",
@@ -40,14 +40,14 @@ const RightSideBarInput  = () =>{
     }
     return(
         <>
-            <Box style={InputMessageSendContainer}>
+            <Box sx={InputMessageSendContainer}>
                     <Box sx={{display: 'flex', alignItems: "center"}}>
-                        <Box style={InputMessageSendIcon}>  <MoodIcon style={{fontSize: "25px"}} /></Box>
+                        <Box sx={InputMessageSendIcon}>  <MoodIcon style={{fontSize: "25px"}} /></Box>
                         <Box><input  style={InputMessageSendIconInput} placeholder={"Type message..."} /></Box>
                     </Box>
                     <Box sx={{display: 'flex', alignItems: "center",height: "47px"}}>
-                        <Box style={InputMessageSendIcon} sx={{display: 'flex', alignItems: "center"}}><MicNoneIcon style={{fontSize: "25px"}} /></Box>
-                        <Box style={InputMessageSendIcon}><IosShareIcon style={{fontSize: "25px"}} /></Box>
+                        <Box  sx={{InputMessageSendIcon,display: 'flex', alignItems: "center"}}><MicNoneIcon style={{fontSize: "25px"}} /></Box>
+                        <Box sx={InputMessageSendIcon}><IosShareIcon style={{fontSize: "25px"}} /></Box>
                         <button style={SendMessageBtn}>Send <SendIcon style={{fontSize: "25px"}} /></button>
                     </Box>
             </Box>

@@ -9,8 +9,6 @@ import RightSidebar from "@/pages/components/RightSidebar";
 
 const HomePage = () => {
     const [toggleState, setToggleState] = useState(false);
-    const backgroundColorFirst = DarkMuiTheme.palette.chat.messageColors[0];
-    const backgroundColorSecond = DarkMuiTheme.palette.chat.messageColors[1];
     const theme = useTheme();
 
     const chatMessagesSend = {

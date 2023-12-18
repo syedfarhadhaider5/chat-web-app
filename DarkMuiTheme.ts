@@ -11,9 +11,6 @@ const DarkMuiTheme = createTheme({
         secondary: {
             main: '#fec84b', // Change the secondary color
         },
-        chat: {
-            messageColors: ['#292929', '#00A3FF'], // Array of colors for chat messages
-        },
         text: {
             primary: '#FFFFFF', // Set the text color for primary elements in dark mode
             secondary: '#FFFFFF', // Set the text color for secondary elements in dark mode

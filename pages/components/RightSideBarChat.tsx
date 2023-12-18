@@ -1,16 +1,17 @@
 import { useTheme } from '@mui/material/styles';
 import {Box, Typography} from "@mui/material";
 import {display, width} from "@mui/system";
+import React from "react";
 
-const RightSideBarChat  = () =>{
+const RightSideBarChat: React.FC  = () =>{
     const theme = useTheme()
     const ChatContainer = {
         backgroundColor: theme.palette.mode === 'light' ? '#F5F5F5' : '#181818',
         height: "70vh",
         display: 'flex',
-        flexDirection: 'column',
-        overflowY: "auto",
-        overflowX: "hidden"
+        flexDirection: 'column' as const, // Use 'column' as a constant
+        overflowY: "auto" as const,
+        overflowX: 'hidden' as const, // Specify the type as 'hidden' or 'auto'
     }
     const messageContainerSend = {
         display: "flex",
@@ -48,7 +49,7 @@ const RightSideBarChat  = () =>{
         background: theme.palette.mode === 'light' ? '#FFFFFF' : '#292929',
         fontSize: "16px",
         padding: "10px",
-        border: `.1px solid ${theme.palette.type === 'light' ? '#E7E7E7' : '#323232'}`, // Set the border color
+        border: ".1px solid" +  theme.palette.mode === 'light' ? '#E7E7E7' : '#323232', // Set the border color
         borderRadius: "8px", // Apply a border-radius to all corners
         borderTopLeftRadius: "0",
         textAlign: "justify",
@@ -61,7 +62,7 @@ const RightSideBarChat  = () =>{
         background: theme.palette.mode === 'light' ? '#00A3FF' : '#00A3FF',
         fontSize: "16px",
         padding: "10px",
-        border: `.1px solid ${theme.palette.type === 'light' ? '#00A3FF' : '#323232'}`, // Set the border color
+        border: ".1px solid" + theme.palette.mode === 'light' ? '#00A3FF' : '#323232', // Set the border color
         borderRadius: "8px", // Apply a border-radius to all corners
         borderTopLeftRadius: "0",
         textAlign: "justify",
@@ -73,15 +74,14 @@ const RightSideBarChat  = () =>{
     return(
         <>
             <Box style={ChatContainer}>
-
                 <Box style={messageContainerSend}>
                     <img src={'img/user1.jpeg'} className={'rounded-full w-10 h-10'}  />
                     <Box sx={{display: "flex", flexDirection: "column",paddingLeft: "16px",alignItems: 'flex-start'}}>
                         <Box sx={{display: "flex", alignItems: "baseline"}}>
-                            <Box><Typography style={ChaMessageSendUserName}>Liam Anderson</Typography></Box>
-                            <Box><Typography style={ChaMessageSendUserTime}>10:30 AM</Typography></Box>
+                            <Box><Typography sx={ChaMessageSendUserName}>Liam Anderson</Typography></Box>
+                            <Box><Typography sx={ChaMessageSendUserTime}>10:30 AM</Typography></Box>
                         </Box>
-                        <Box style={ChaMessageSendUserMessage}>
+                        <Box sx={ChaMessageSendUserMessage}>
                             <p>Absolutely! I'm thinking of going for a hike on Saturday. How
                                 about you?Absolutely!</p>
                         </Box>
@@ -90,10 +90,10 @@ const RightSideBarChat  = () =>{
                 <Box style={messageContainerReceiver}>
                     <Box sx={{display: "flex", flexDirection: "column",paddingRight: "16px",alignItems: 'flex-end'}}>
                         <Box sx={{display: "flex", alignItems: "baseline"}}>
-                            <Box><Typography style={ChaMessageReceiverUserName}>Cummins</Typography></Box>
-                            <Box><Typography style={ChaMessageReceiverUserTime}>10:30 AM</Typography></Box>
+                            <Box><Typography sx={ChaMessageReceiverUserName}>Cummins</Typography></Box>
+                            <Box><Typography sx={ChaMessageReceiverUserTime}>10:30 AM</Typography></Box>
                         </Box>
-                        <Box style={ChaMessageReceiverUserMessage}>
+                        <Box sx={ChaMessageReceiverUserMessage}>
                             <p>wow</p>
                         </Box>
                     </Box>
@@ -104,21 +104,21 @@ const RightSideBarChat  = () =>{
                     <img src={'img/user1.jpeg'} className={'rounded-full w-10 h-10'}  />
                     <Box sx={{display: "flex", flexDirection: "column",paddingLeft: "16px",alignItems: 'flex-start'}}>
                         <Box sx={{display: "flex", alignItems: "baseline"}}>
-                            <Box><Typography style={ChaMessageSendUserName}>Liam Anderson</Typography></Box>
-                            <Box><Typography style={ChaMessageSendUserTime}>10:30 AM</Typography></Box>
+                            <Box><Typography sx={ChaMessageSendUserName}>Liam Anderson</Typography></Box>
+                            <Box><Typography sx={ChaMessageSendUserTime}>10:30 AM</Typography></Box>
                         </Box>
-                        <Box style={ChaMessageSendUserMessage}>
+                        <Box sx={ChaMessageSendUserMessage}>
                             <p>When!</p>
                         </Box>
                     </Box>
                 </Box>
-                <Box style={messageContainerReceiver}>
+                <Box sx={messageContainerReceiver}>
                     <Box sx={{display: "flex", flexDirection: "column",paddingRight: "16px",alignItems: 'flex-end'}}>
                         <Box sx={{display: "flex", alignItems: "baseline"}}>
-                            <Box><Typography style={ChaMessageReceiverUserName}>Cummins</Typography></Box>
-                            <Box><Typography style={ChaMessageReceiverUserTime}>10:30 AM</Typography></Box>
+                            <Box><Typography sx={ChaMessageReceiverUserName}>Cummins</Typography></Box>
+                            <Box><Typography sx={ChaMessageReceiverUserTime}>10:30 AM</Typography></Box>
                         </Box>
-                        <Box style={ChaMessageReceiverUserMessage}>
+                        <Box sx={ChaMessageReceiverUserMessage}>
                             <p>Am Ready After 20 minutes</p>
                         </Box>
                     </Box>
@@ -129,10 +129,10 @@ const RightSideBarChat  = () =>{
                     <img src={'img/user1.jpeg'} className={'rounded-full w-10 h-10'}  />
                     <Box sx={{display: "flex", flexDirection: "column",paddingLeft: "16px",alignItems: 'flex-start'}}>
                         <Box sx={{display: "flex", alignItems: "baseline"}}>
-                            <Box><Typography style={ChaMessageSendUserName}>Liam Anderson</Typography></Box>
-                            <Box><Typography style={ChaMessageSendUserTime}>10:30 AM</Typography></Box>
+                            <Box><Typography sx={ChaMessageSendUserName}>Liam Anderson</Typography></Box>
+                            <Box><Typography sx={ChaMessageSendUserTime}>10:30 AM</Typography></Box>
                         </Box>
-                        <Box style={ChaMessageSendUserMessage}>
+                        <Box sx={ChaMessageSendUserMessage}>
                             <p>Hurry Up am waiting</p>
                         </Box>
                     </Box>
@@ -140,10 +140,10 @@ const RightSideBarChat  = () =>{
                 <Box style={messageContainerReceiver}>
                     <Box sx={{display: "flex", flexDirection: "column",paddingRight: "16px",alignItems: 'flex-end'}}>
                         <Box sx={{display: "flex", alignItems: "baseline"}}>
-                            <Box><Typography style={ChaMessageReceiverUserName}>Cummins</Typography></Box>
-                            <Box><Typography style={ChaMessageReceiverUserTime}>10:39 AM</Typography></Box>
+                            <Box><Typography sx={ChaMessageReceiverUserName}>Cummins</Typography></Box>
+                            <Box><Typography sx={ChaMessageReceiverUserTime}>10:39 AM</Typography></Box>
                         </Box>
-                        <Box style={ChaMessageReceiverUserMessage}>
+                        <Box sx={ChaMessageReceiverUserMessage}>
                             <p>Ok</p>
                         </Box>
                     </Box>

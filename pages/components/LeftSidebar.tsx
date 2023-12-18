@@ -4,9 +4,9 @@ import ChatIcon from '@mui/icons-material/Chat';
 import SearchIcon from '@mui/icons-material/Search';
 import AddIcon from '@mui/icons-material/Add';
 import PushPinIcon from '@mui/icons-material/PushPin';
-import {useState} from "react";
+import React, {useState} from "react";
 
-const LeftSidebar = () =>{
+const LeftSidebar: React.FC = () =>{
     const theme = useTheme()
     const [isClicked, setIsClicked] = useState(false);
     const handleClick = () => {
@@ -16,7 +16,7 @@ const LeftSidebar = () =>{
         backgroundColor: theme.palette.mode === 'light' ? '#FFFFFF' : '#121212',
         height: '100vh',
         width: "30vw",
-        border: `.1px solid ${theme.palette.type === 'light' ? '#5E5E5E' : '#303030'}`, // Set the border color
+        border:  ".1px solid" + theme.palette.mode === 'light' ? '#5E5E5E' : '#303030', // Set the border color
         overflowY: 'auto',
     };
     const ChatHeaderContainer = {
@@ -38,12 +38,12 @@ const LeftSidebar = () =>{
         fontWeight: 'semiBold',
     }
     const inputSearchBox = {
-        border: `.1px  solid ${theme.palette.type === 'light' ? '#CCCFD0' : '#303030'}`, // Set the border color
+        border: ".1px  solid" + theme.palette.mode === 'light' ? '#CCCFD0' : '#303030', // Set the border color
         fontSize: '16px',
     }
     const inputSearchBoxFocus = {
         backgroundColor: 'yellow',
-        border: `.1px solid ${theme.palette.type === 'light' ? '#CCCFD0' : '#303030'}`, // Set the border color
+        border: ".1px solid" + theme.palette.mode === 'light' ? '#CCCFD0' : '#303030', // Set the border color
     }
     const inputSearch = {
         background:  theme.palette.mode === 'light' ? '#FFFFFF' : '#121212',
@@ -103,7 +103,7 @@ const LeftSidebar = () =>{
     }
     return(
         <>
-            <Box style={chatLeftSideBar}>
+            <Box sx={chatLeftSideBar}>
                 <Box display={'flex'} alignItems={"center"} className={'pt-4 pb-4'} style={ChatHeaderContainer}>
                     <Typography variant={'h4'} style={ChatHeader}>
                         <ChatIcon style={{ color: '#00A3FF', fontSize: '42px',marginRight: '15px', }} />
@@ -114,9 +114,7 @@ const LeftSidebar = () =>{
                     <Box style={{...inputSearchBox}}>
                         <SearchIcon style={{color: '#ABAFB1',paddingLeft: '8px',fontSize: '36px',}} />
                         <input style={{
-                            ...inputSearch,
-                            ':focus': inputSearchBoxFocus,
-                        }}
+                            ...inputSearch}}
                         className={'s'}
                         placeholder={'Search messages, people'} />
                     </Box>
@@ -131,12 +129,12 @@ const LeftSidebar = () =>{
                         <Box display={"flex"} alignItems={"flex-start"}>
                             <img src={'img/user_7.jpeg'} className={'rounded-full w-12 h-12'}  />
                             <Box style={{paddingLeft: '16px',}}>
-                                <Typography varint={"subtitle1"} style={userName}>Shakra Shamim</Typography>
-                                <Typography varint={"subtitle2"} style={userTyping}>Typing...</Typography>
+                                <Typography variant={"subtitle1"} style={userName}>Shakra Shamim</Typography>
+                                <Typography variant={"subtitle2"} style={userTyping}>Typing...</Typography>
                             </Box>
                         </Box>
                     </Box>
-                    <Box><Typography varint={"subtitle2"} style={userTiming}>04:50 PM</Typography></Box>
+                    <Box><Typography variant={"subtitle2"} style={userTiming}>04:50 PM</Typography></Box>
                 </Box>
                 <Box style={chatUser}
                      onClick={handleClick}
@@ -148,27 +146,27 @@ const LeftSidebar = () =>{
                         <Box display={"flex"} alignItems={"flex-start"}>
                             <img src={'img/user_2.jpeg'} className={'rounded-full w-12 h-12'}  />
                             <Box style={{paddingLeft: '16px'}}>
-                                <Typography varint={"subtitle1"} style={userName}>Cummins</Typography>
-                                <Typography varint={"subtitle2"} style={userTyping}></Typography>
+                                <Typography variant={"subtitle1"} style={userName}>Cummins</Typography>
+                                <Typography variant={"subtitle2"} style={userTyping}></Typography>
                             </Box>
                         </Box>
                     </Box>
-                    <Box><Typography varint={"subtitle2"} style={userTiming}>12:50 PM</Typography></Box>
+                    <Box><Typography variant={"subtitle2"} style={userTiming}>12:50 PM</Typography></Box>
                 </Box>
                 <Box style={chatUser}  display={'flex'} justifyContent={'space-between'} alignItems={'flex-start'} className={'pt-4 pb-4'}>
                     <Box display={"flex"}>
                         <Box display={"flex"} alignItems={"flex-start"}>
                             <img src={'img/user_3.jpeg'} className={'rounded-full w-12 h-12'}  />
                             <Box style={{paddingLeft: '16px'}}>
-                                <Typography varint={"subtitle1"} style={userName}>Sergey Ugryumov</Typography>
-                                <Typography varint={"subtitle2"} style={userTyping}></Typography>
-                                <Typography varint={"subtitle2"} style={UserLatestMessage}>Hey, how's it going?</Typography>
+                                <Typography variant={"subtitle1"} style={userName}>Sergey Ugryumov</Typography>
+                                <Typography variant={"subtitle2"} style={userTyping}></Typography>
+                                <Typography variant={"subtitle2"} style={UserLatestMessage}>Hey, how's it going?</Typography>
                             </Box>
                         </Box>
                     </Box>
                     <Box display={"flex"} flexDirection={"column"} alignItems={"flex-end"}>
-                        <Typography varint={"subtitle2"} style={userTiming}>11:50 AM</Typography>
-                        <Typography style={userMessageCount} varint={"subtitle2"}>
+                        <Typography variant={"subtitle2"} style={userTiming}>11:50 AM</Typography>
+                        <Typography style={userMessageCount} variant={"subtitle2"}>
                             3
                         </Typography>
                     </Box>
@@ -182,15 +180,15 @@ const LeftSidebar = () =>{
                         <Box display={"flex"} alignItems={"flex-start"}>
                             <img src={'img/user_4.jpeg'} className={'rounded-full w-12 h-12'}  />
                             <Box style={{paddingLeft: '16px'}}>
-                                <Typography varint={"subtitle1"} style={userName}>Yury Isakov</Typography>
-                                <Typography varint={"subtitle2"} style={userTyping}></Typography>
-                                <Typography varint={"subtitle2"} style={UserLatestMessage}>Hey, how's it going?</Typography>
+                                <Typography variant={"subtitle1"} style={userName}>Yury Isakov</Typography>
+                                <Typography variant={"subtitle2"} style={userTyping}></Typography>
+                                <Typography variant={"subtitle2"} style={UserLatestMessage}>Hey, how's it going?</Typography>
                             </Box>
                         </Box>
                     </Box>
                     <Box display={"flex"} flexDirection={"column"} alignItems={"flex-end"}>
-                        <Typography varint={"subtitle2"} style={userTiming}>07:50 PM</Typography>
-                        <Typography style={userMessageCount} varint={"subtitle2"}>
+                        <Typography variant={"subtitle2"} style={userTiming}>07:50 PM</Typography>
+                        <Typography style={userMessageCount} variant={"subtitle2"}>
                             1
                         </Typography>
                     </Box>
@@ -208,15 +206,15 @@ const LeftSidebar = () =>{
                         <Box display={"flex"} alignItems={"flex-start"}>
                             <img src={'img/user_5.jpeg'} className={'rounded-full w-12 h-12'}  />
                             <Box style={{paddingLeft: '16px'}}>
-                                <Typography varint={"subtitle1"} style={userName}>Jad Tabba</Typography>
-                                <Typography varint={"subtitle2"} style={userTyping}></Typography>
-                                <Typography varint={"subtitle2"} style={UserLatestMessage}>Just got back from a hiking trip!</Typography>
+                                <Typography variant={"subtitle1"} style={userName}>Jad Tabba</Typography>
+                                <Typography variant={"subtitle2"} style={userTyping}></Typography>
+                                <Typography variant={"subtitle2"} style={UserLatestMessage}>Just got back from a hiking trip!</Typography>
                             </Box>
                         </Box>
                     </Box>
                     <Box display={"flex"} flexDirection={"column"} alignItems={"flex-end"}>
-                        <Typography varint={"subtitle2"} style={userTiming}>02:50 PM</Typography>
-                        <Typography style={userMessageCount} varint={"subtitle2"}>
+                        <Typography variant={"subtitle2"} style={userTiming}>02:50 PM</Typography>
+                        <Typography style={userMessageCount} variant={"subtitle2"}>
                             3
                         </Typography>
                     </Box>
